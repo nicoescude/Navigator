@@ -10,8 +10,12 @@ public class Navigator {
     }
 
     public void navigate(){
-        App.print("Tardaremos en llegar: " + this.getNavStrat().navigate(origen, destino)+" minutos.");
-        App.print(this.getNavStrat().getDescripcion()+"  "+this.getNavStrat().getComodidad());
+        if (this.getNavStrat() != null){
+            App.print("Tardaremos en llegar: " + this.getNavStrat().navigate(origen, destino)+" minutos.");
+            App.print(this.getNavStrat().getDescripcion()+"  "+this.getNavStrat().getComodidad());
+        }
+        else
+            System.out.println("Error, no se ha definido una estrategia de viaje");
     }
 
     public void setStrat(ITransportStrategy navStrat) {
